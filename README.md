@@ -7,8 +7,12 @@
 
 ## Snapshots of the created application, are attached below.
 
-<img src="./images/first.png" height="600" width="1200">
+<img src="./images/first.png" height="500" width="1200">
 <br>
-<img src="./images/second.png" height="600" width="1200">
+<img src="./images/second.png" height="500" width="1200">
 <br>
-<img src="./images/third.png" height="600" width="1200">
+<img src="./images/third.png" height="500" width="1200">
+<br>
+<img src="./images/fourth.png" height="500" width="1200">
+<br>
+<img src="./images/fifth.png" height="500" width="1200">

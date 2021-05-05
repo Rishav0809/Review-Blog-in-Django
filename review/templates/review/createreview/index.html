@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Post Review</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link href="{% static 'createreview/css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Post Review</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'createreview' %}" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        {% if error %}
+
+                        <div  class="alert alert-danger" role="alert">
+                            {{error}}
+                          </div>
+                        {% endif %}  
+
+                        <div class="form-row">
+                            <div class="name">Title</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="title">
+                            </div>
+                        </div>
+
+                       
+                        <div class="form-row">
+                            <div class="name">Review</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-6" name="review" placeholder="Your Review for the product"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-row">
+                                <div class="name">Upload main image of the product</div>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="mainphoto" id="file">
+                                        <label class="label--file" for="file" value="{{data.mainphoto}}">Choose file</label>
+                                        <span class="input-file__info">No file chosen</span>
+                                    </div>
+                                    <div class="label--desc">Upload image of the item. Max file size 50 MB</div>
+                                </div>
+    
+                                <div class="name">Upload image of the product</div>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="photo1" id="file">
+                                        <label class="label--file" for="file" value="{{data.photo1}}">Choose file</label>
+                                        <span class="input-file__info">No file chosen</span>
+                                    </div>
+                                    <div class="label--desc">Upload image of the item. Max file size 50 MB</div>
+                                </div>
+                                <div class="name">Upload image of the product</div>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="photo2" id="file">
+                                        <label class="label--file" for="file" value="{{data.photo2}}">Choose file</label>
+                                        <span class="input-file__info">No file chosen</span>
+                                    </div>
+                                    <div class="label--desc">Upload image of the item. Max file size 50 MB</div>
+                                </div>
+                                <div class="name">Upload image of the product</div>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="photo3" id="file">
+                                        <label class="label--file" for="file" value="{{data.photo3}}">Choose file</label>
+                                        <span class="input-file__info">No file chosen</span>
+                                    </div>
+                                    <div class="label--desc">Upload image of the item. Max file size 50 MB</div>
+                                </div>
+                                <div class="name">Upload image of the product</div>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="photo4" id="file">
+                                        <label class="label--file" for="file" value="{{data.photo4}}">Choose file</label>
+                                        <span class="input-file__info">No file chosen</span>
+                                    </div>
+                                    <div class="label--desc">Upload image of the item. Max file size 50 MB</div>
+                                </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Post Review</button>
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'createreview/vendor/jquery/jquery.min.js' %}"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'createreview/js/global.js' %}"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<!-- end document-->

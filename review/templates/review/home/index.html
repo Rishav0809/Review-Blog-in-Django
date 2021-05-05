@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+     <title>Get.Review</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/animate.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/owl.carousel.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/owl.theme.default.min.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/magnific-popup.css' %}   ">
+     <link rel="stylesheet" href="{% static 'homepage/css/templatemo-style.css' %}   ">
+     <!-- <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
+
+     <-- MAIN CSS -->
+     <!-- <link rel="stylesheet" href="css/templatemo-style.css"> --> 
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <!-- <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section> -->
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="{% url 'home' %}" class="navbar-brand">Rev<span>APP</span> </a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="{% url 'home' %}" class="smoothScroll">Home</a></li>
+                         <li><a href="{% url 'allreviews' %}" class="smoothScroll">All Reviews</a></li>
+                         <li><a href="{% url 'allexperts' %}" class="smoothScroll">Meet the Experts</a></li>
+                         <li><a href="#footer" class="smoothScroll">Contact</a></li>
+                         <!-- <li><a href="#contact" class="smoothScroll">Contact</a></li> -->
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                         <!-- <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li> -->
+                         {% if user.is_authenticated %}
+                         <a href="#"  class="section-btn ">Logged In As {{ user.username}}</a>
+                         <a href="{% url 'userpanel' %}"  class="section-btn">Dashboard</a>
+                         <form method="POST" action="{% url 'logoutuser' %}" style="display: inline;">{% csrf_token %}<button type="submit"  class="section-btn">Log Out</button>  </form>
+                         {% else %}  
+                         <a href="{% url 'signupuser' %}"  class="section-btn ">Become An Expert</a>
+                         <a href="{% url 'loginuser' %}"  class="section-btn">Sign In</a>
+                         
+                         {% endif %}
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="row">
+
+                    <div class="owl-carousel owl-theme" id="banner">
+                         <div class="item item-first">
+                              <div class="caption">
+                                   <div class="container">
+                                        <div class="col-md-8 col-sm-12">
+                                             <h3>Get Your Product Reviewed By An Expert</h3>
+                                             <h1>Our mission is to provide the most appropiate review for your product</h1>
+                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Get A Review</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="item item-second">
+                              <div class="caption">
+                                   <div class="container">
+                                        <div class="col-md-8 col-sm-12">
+                                             <h3>Become our Expert</h3>
+                                             <h1>Start your side hustle by becoming our expert </h1>
+                                             <a href="{% url 'signupuser' %}" class="section-btn btn btn-default smoothScroll">Become Our Expert</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         
+                    </div>
+
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="about-info">
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                                   <h4>Read our story</h4>
+                                   <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, recusandae.</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
+                                   <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                              <img src="images/about-image.jpg" class="img-responsive" alt="">
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2><a href="{% url 'allexperts' %}">Meet the Experts</a></h2>
+                              
+                         </div>
+                    </div>
+               <!-- <div class="owl-carousel owl-theme" id="expert"> -->
+                    {% for profile in profiles %}
+                    <div class=" col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              {% if profile.photo %}
+                              <img src="{{ profile.photo.url }}" class="img-responsive" alt="" style="height: 300px;">
+                              {% else %}
+                              <img src="{% static 'default.png' %}" class="img-responsive" alt="" style="height: 300px;">
+                              {% endif %}
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>{{ profile.description|slice:":30" }}....</h4> 
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-eye"></a></li>
+                                                  
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3><a href="{% url 'profile' profile.id %}"> {{ profile.name }}</a></h3>
+                              <p>{{ profile.category }}</p>
+                         </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class=" col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="{% static 'homepage/images/team-image2.jpg' %}" class="img-responsive" alt="">
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>Cras suscipit neque quis odio feugiat</h4>
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-instagram"></a></li>
+                                                  <li><a href="#" class="fa fa-flickr"></a></li>
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3>Lindsay Perlen</h3>
+                              <p>Owner &amp; Manager</p>
+                         </div>
+                    </div> -->
+
+                    <!-- <div class=" col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="{% static 'homepage/images/team-image3.jpg' %}" class="img-responsive" alt="">
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>Etiam auctor enim tristique faucibus</h4>
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-github"></a></li>
+                                                  <li><a href="#" class="fa fa-google"></a></li>
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3>Isabella Grace</h3>
+                              <p>Pizza Specialist</p>
+                         </div>
+                    </div> -->
+               <!-- </div> -->
+               </div>
+          </div>
+     </section>
+
+
+     <!-- MENU-->
+     <section id="menu" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Already Posted Reviews</h2>
+                              <h4><a href="{% url 'allreviews' %}">See All</a></h4>
+                         </div>
+                    </div>
+
+
+                    {% for review in reviews %}
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb" style="height: 400px; width: 400px;">
+                              <a href="{{review.mainphoto.url}}" class="image-popup" title="{{review.title}}">
+                                   {% if review.mainphoto %}
+                                   <img src="{{ review.mainphoto.url }}" class="img-responsive" alt="" >
+                                   {% else %}
+                                   <img src="{% static 'default.png' %}" class="img-responsive" alt="" >
+                                   {% endif %}
+
+                                   <div class="menu-info">
+                                        <div class="menu-item" >
+                                             <h3><a href="{% url 'review' review.id %}" style="color: white;"> {{review.title}}</a></h3>
+                                             <p><a href="{% url 'review' review.id %}" style="color: white;">{{review.author}}</a></p>
+                                        </div>
+                                        
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+                    {% endfor %}
+
+                   
+
+               </div>
+          </div>
+     </section>
+
+     
+
+     
+
+     
+
+
+     <!-- CONTACT -->
+     
+
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-3 col-sm-8">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Find us</h2>
+                              </div>
+                              <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>123 nulla a cursus rhoncus,<br> augue sem viverra 10870<br>id ultricies sapien</p>
+                              </address>
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-8">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Contact Us</h2>
+                              </div>
+                              <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>090-080-0650 | 090-070-0430</p>
+                                   <p><a href="mailto:info@company.com">info@company.com</a></p>
+                                   
+                              </address>
+                         </div>
+                    </div>
+
+                    
+                    <div class="col-md-2 col-sm-4">
+                         <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s">
+                              <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                              <li><a href="#" class="fa fa-twitter"></a></li>
+                              <li><a href="#" class="fa fa-instagram"></a></li>
+                              <li><a href="#" class="fa fa-google"></a></li>
+                         </ul>
+
+                         <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s"> 
+                              <p><br>Copyright &copy; 2020 <br>Review
+                              
+                              <br><br></p>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'homepage/js/jquery.js' %}"></script>
+     <script src="{% static 'homepage/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'homepage/js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'homepage/js/wow.min.js' %}"></script>
+     <script src="{% static 'homepage/js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'homepage/js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'homepage/js/smoothscroll.js' %}"></script>
+     <script src="{% static 'homepage/js/custom.js' %}"></script>
+     
+     <!-- <script src="js/jquery.js"></script> -->
+     <!-- <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script> -->
+
+</body>
+</html>

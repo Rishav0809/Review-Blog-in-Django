@@ -1,4 +1,4 @@
-# NewsApplication
+# <a href="http://rishavm7.pythonanywhere.com/">NewsApplication</a>
 
 - This django application, allows the users to login and write review blogs.
 - However, first the users need to be authorized by the admin, and then the admin would grant the users with certain credit points.
